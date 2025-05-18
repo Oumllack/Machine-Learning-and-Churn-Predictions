@@ -62,21 +62,27 @@ The study utilizes the Telco Customer Churn dataset, which contains information 
 ### 3.1 Customer Churn Distribution
 
 ![Churn Distribution](analysis/churn_distribution.png)
-**Figure 1:** Proportion of customers who churned vs. those who stayed.
+**Figure 1:** Distribution of customer churn status in the dataset.
 
 The dataset shows a churn rate of approximately 26.5%, indicating a significant challenge for customer retention. This distribution highlights the importance of effective churn prediction and prevention strategies.
 
-### 3.2 Feature Importance Analysis
+### 3.2 Feature Analysis
 
-![Feature Importance](analysis/feature_importance_random_forest.png)
-**Figure 2:** The most important features for predicting churn, as determined by the Random Forest model.
+![Contract Impact](analysis/churn_by_Contract.png)
+**Figure 2:** Impact of contract type on customer churn.
 
-Key factors influencing churn, in order of importance:
-1. **Tenure**: Customer's length of service
-2. **Contract Type**: Month-to-month contracts show higher churn risk
-3. **Monthly Charges**: Higher charges correlate with increased churn
-4. **Total Charges**: Overall spending impact on churn
-5. **Internet Service**: Type of internet service significantly affects churn
+![Internet Service Impact](analysis/churn_by_InternetService.png)
+**Figure 3:** Impact of internet service type on customer churn.
+
+![Payment Method Impact](analysis/churn_by_PaymentMethod.png)
+**Figure 4:** Impact of payment method on customer churn.
+
+Key factors influencing churn:
+1. **Contract Type**: Month-to-month contracts show higher churn risk
+2. **Internet Service**: Fiber optic customers show higher churn rates
+3. **Payment Method**: Electronic payment methods correlate with higher churn
+4. **Technical Support**: Customers without tech support are more likely to churn
+5. **Online Security**: Lack of online security increases churn risk
 
 ### 3.3 Model Performance
 
@@ -86,21 +92,24 @@ Key factors influencing churn, in order of importance:
 - Strong performance in identifying at-risk customers
 
 ![ROC Curve](analysis/roc_curve_random_forest.png)
-**Figure 3:** ROC curve showing the trade-off between true positive rate and false positive rate for the Random Forest model.
+**Figure 5:** ROC curve showing the trade-off between true positive rate and false positive rate for the Random Forest model.
 
 #### Learning Curves
 
 ![Learning Curve](analysis/learning_curve_random_forest.png)
-**Figure 4:** Learning curve illustrating model performance as a function of training set size.
+**Figure 6:** Learning curve illustrating model performance as a function of training set size.
 
 The learning curves demonstrate good model convergence and appropriate complexity.
 
-### 3.4 High-Risk Customer Analysis
+### 3.4 Customer Behavior Analysis
 
-![High Risk Contract Distribution](analysis/high_risk_contract_distribution.png)
-**Figure 5:** Distribution of contract types among customers with a high predicted risk of churn.
+![Monthly Charges Distribution](analysis/MonthlyCharges_distribution.png)
+**Figure 7:** Distribution of monthly charges by churn status.
 
-Characteristics of high-risk customers (churn probability > 0.7):
+![Tenure Distribution](analysis/tenure_distribution.png)
+**Figure 8:** Distribution of customer tenure by churn status.
+
+Characteristics of high-risk customers:
 - Predominantly month-to-month contracts
 - Higher monthly charges
 - Shorter tenure
